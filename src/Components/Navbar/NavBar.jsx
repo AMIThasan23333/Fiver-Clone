@@ -1,15 +1,38 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./NavBar.scss";
 
 const NavBar = () => {
 
 
-    const { active , setActive } = useState(false);
+    const [ active , setActive] = useState(false);
+
+
+    const isActive = () => {
+
+        window.scrollY > 0 ? setActive(true) : setActive(false)
+    }
+
+
+    useEffect(() => {
+        window.addEventListener("scroll", isActive)
+        return() => {        
+            window.removeEventListener("scroll", isActive)
+        }
+    })
+
+
+    const currentUser = {
+        id : 1,
+        userName : "John Doe",
+        isSeller : true,
+    }
+
 
 
 
   return (
-    <div className={active ? "navbar active" : "navbar" }>
+    <div className={active ? "navbar active" : "navbar"}>
+
 
        <div className="container">
         <div className="logo">
@@ -21,19 +44,26 @@ const NavBar = () => {
           <span>Explore</span>
           <span>English</span>
           <span>Sign In</span>
-          <span>Become a Seller </span>
-          <button>Join</button>
+       {!currentUser ?.isSeller &&    <span>Become a Seller </span>}
+    
+    {!currentUser &&       <button>Join</button>}
 
           </div>
         
        </div>
-       <hr/>
 
 
+
+     {  active &&
+        <>
+          <hr/>
      <div className="menu">
         <span>Test</span>
         <span>Test2</span>
      </div>
+        </>
+
+     }
 
     </div>
   )
