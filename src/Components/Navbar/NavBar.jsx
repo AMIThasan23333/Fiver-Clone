@@ -6,6 +6,7 @@ const NavBar = () => {
 
     const [ active , setActive] = useState(false);
 
+    const [ open , setOpen] = useState(false);
 
     const isActive = () => {
 
@@ -45,8 +46,38 @@ const NavBar = () => {
           <span>English</span>
           <span>Sign In</span>
        {!currentUser ?.isSeller &&    <span>Become a Seller </span>}
+    {!currentUser &&  <button>Join</button>}
+
+    {currentUser && (
+
+     <div className='user' onClick={() => setOpen(!open)}>    
+
+   <img src="https://unsplash.com/photos/2uiWqCazp20" alt="" sizes="" srcset="" />  
+   <span>{currentUser?.userName}</span>  
+
+    {
+        open &&    <div className="options">
     
-    {!currentUser &&       <button>Join</button>}
+        {currentUser?.isSeller  && (
+    
+           
+           <>
+           <span>GIGS</span>
+           <span>Add New Gigs </span>
+           </>
+        )}
+    
+        <span>Orders</span>
+        <span>Messages</span>
+        <span>Logout</span>
+    
+    
+        </div>
+    } 
+
+    </div>
+
+    )}
 
           </div>
         
