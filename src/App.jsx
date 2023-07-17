@@ -1,13 +1,11 @@
-import Add from "./Pages/Add/Add"
-
+import NavBar from "./Components/Navbar/NavBar"
 
 function App() {
 
 
   return (
     <div>
-      Hello world!
-      <Add></Add>
+      <NavBar></NavBar>
     </div>
   )
 }
