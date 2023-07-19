@@ -1,6 +1,11 @@
 import React from 'react'
 import Featured from '../../Components/Featured/Featured'
 import TrustedBy from '../../Components/TrustedBy/TrustedBy'
+import Sli from '../../Components/Sli/Sli'
+
+
+
+
 
 const Home = () => {
 
@@ -10,6 +15,9 @@ const Home = () => {
 
     <Featured></Featured>
     <TrustedBy></TrustedBy>
+    <Sli></Sli>
+  
+
 
     </div>
   )
