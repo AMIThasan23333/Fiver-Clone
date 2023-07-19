@@ -14,15 +14,15 @@ const Featured = () => {
            <img src="/src/img/search.png" alt="" srcset="" />
       <input type="text" name="" id="" placeholder='search here ' />
               </div>
-              <button>Search</button>
+              <button className='button'>Search</button>
             </div>
 
           <div className="popular">
-            <span>Popular</span>
-            <span>Web Design</span>
-            <span>WordPress</span>
-            <span>Logo Design</span>
-            <span>AI Services </span>
+            <span className='button'>Popular</span>
+            <span className='button'>Web Design</span>
+            <span className='button'>WordPress</span>
+            <span className='button'>Logo Design</span>
+            <span className='button'>AI Services </span>
           </div>
 
 
