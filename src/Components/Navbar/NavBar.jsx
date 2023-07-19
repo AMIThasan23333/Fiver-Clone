@@ -53,10 +53,11 @@ const NavBar = () => {
             <span className='dot'>.</span>
         </div>
           <div className="links">
-          <span>Liverr Business</span>
+          <span>Fiver Business</span>
           <span>Explore</span>
           <span>English</span>
           <span>Sign In</span>
+          
        {!currentUser ?.isSeller &&    <span>Become a Seller </span>}
     {!currentUser &&  <button>Join</button>}
 
