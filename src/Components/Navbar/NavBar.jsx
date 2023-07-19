@@ -1,17 +1,25 @@
 import React, { useEffect, useState } from 'react'
 import "./NavBar.scss";
+import { Link, useLocation } from "react-router-dom";
 
 const NavBar = () => {
 
-
     const [ active , setActive] = useState(false);
-
     const [ open , setOpen] = useState(false);
 
-    const isActive = () => {
 
+/* pathname ei vabe likte hoi  */
+
+    const {pathname } = useLocation();
+    
+    console.log(pathname);
+    
+
+    const isActive = () => {
         window.scrollY > 0 ? setActive(true) : setActive(false)
-    }
+    };
+
+
 
 
     useEffect(() => {
@@ -32,12 +40,16 @@ const NavBar = () => {
 
 
   return (
-    <div className={active ? "navbar active" : "navbar"}>
+    <div className={(active || pathname !== "/") ? "navbar active" : "navbar"}>
 
 
        <div className="container">
         <div className="logo">
-            <span className='text'>Fiverr</span>
+      
+      <Link to='/' className='link'>
+      <span >Fiverr</span>
+      </Link>
+
             <span className='dot'>.</span>
         </div>
           <div className="links">
@@ -62,14 +74,14 @@ const NavBar = () => {
     
            
            <>
-           <span>GIGS</span>
-           <span>Add New Gigs </span>
+           <Link className='link' to='/mygigs'>GIGS</Link>
+           <Link className='link' to='/add'>Add New Gigs </Link>
            </>
         )}
     
-        <span>Orders</span>
-        <span>Messages</span>
-        <span>Logout</span>
+        <Link className='link' to='/orders'>Orders</Link>
+        <Link className='link' to='/messages'>Messages</Link>
+        <Link className='link' to='/'>Logout</Link>
     
     
         </div>
@@ -85,12 +97,41 @@ const NavBar = () => {
 
 
 
-     {  active &&
+     {  (active || pathname !== "/")&&
         <>
           <hr/>
      <div className="menu">
-        <span>Test</span>
-        <span>Test2</span>
+      
+      <Link to='' className='link menulink'>
+      Graphic & Design
+      </Link>
+      <Link to='' className='link menulink'>
+      Writting & Translation
+      </Link>
+      <Link to='' className='link menulink'>
+      AI Services
+      </Link>
+      <Link to='' className='link menulink'>
+     Digital Marketting
+      </Link>
+
+      <Link to='' className='link menulink'>
+    Music & Audio
+      </Link>
+
+         
+      <Link to='' className='link menulink'>
+      Programming & Tech 
+      </Link>
+
+
+      <Link to='' className='link menulink'>
+      LifeStyle 
+      </Link>
+
+
+
+
      </div>
         </>
 
