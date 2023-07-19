@@ -2,6 +2,7 @@ import React from 'react'
 import Featured from '../../Components/Featured/Featured'
 import TrustedBy from '../../Components/TrustedBy/TrustedBy'
 import Sli from '../../Components/Sli/Sli'
+import CatCard from '../../Components/CatCard/CatCard'
 
 
 
@@ -15,7 +16,7 @@ const Home = () => {
 
     <Featured></Featured>
     <TrustedBy></TrustedBy>
-    <Sli></Sli>
+    <CatCard></CatCard>
   
 
 
