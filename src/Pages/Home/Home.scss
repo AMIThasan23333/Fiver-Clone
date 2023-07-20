@@ -1,0 +1,49 @@
+
+
+.home {
+
+    .features{
+
+        background-color: #f1fdf7;
+        display: flex;
+        justify-content: center;
+        padding: 100px 0px;
+
+        .container {
+
+           width: 1200px;
+           display: flex;
+           align-items: center;
+           gap: 15px;
+
+        .item{
+
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            
+            &:first-child {
+                flex: 2;
+            }
+
+            &:last-child {
+                flex: 3;
+            }
+
+            h1{
+
+            }
+            p{
+
+            }
+            .title {
+
+            }
+
+            video {
+                width: 720px;
+            }
+        }
+        }
+    }
+}

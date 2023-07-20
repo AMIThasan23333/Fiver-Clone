@@ -3,7 +3,7 @@ import Featured from '../../Components/Featured/Featured'
 import TrustedBy from '../../Components/TrustedBy/TrustedBy'
 import Sli from '../../Components/Sli/Sli'
 import CatCard from '../../Components/CatCard/CatCard'
-
+import './Home.scss'
 import {cards} from '../../data' 
 
 
