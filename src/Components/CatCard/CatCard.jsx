@@ -12,10 +12,12 @@ const CatCard = ({item}) => {
     <Link to='/gig/123'>
 
     <div className="catCard">
-      <img src={item.img} alt="" sizes="" srcset="" />
-      <span className='desc'>{item.desc}</span>
-      <span className='desc'>{item.title}</span>
 
+
+       <span className='desc'>{item.desc}</span>
+      <span className='desc'>{item.title}</span>
+      <img src={item.img} alt="" sizes="" srcset="" />
+  
     </div>
 
     </Link>
